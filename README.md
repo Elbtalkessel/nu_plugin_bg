@@ -28,8 +28,21 @@ Examples:
 ## Known Issues
 
 If you start a program that writes to stdout, you'll get an error. This what I get on my Mac and I'm not really sure what it means. It could have nothing to do with writing to stdout?
+
 ```nushell
 ❯ bg cat -a [cargo.toml] -d
 Starting process: 'cat' with args '["cargo.toml"]'
 cat: cargo.toml: Broken pipe (os error 32)
+```
+
+## Build
+
+```shell
+nix build
+```
+
+## Dev shell
+
+```nushell
+nix develop -c $env.SHELL
 ```
