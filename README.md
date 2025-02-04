@@ -39,7 +39,7 @@ cat: cargo.toml: Broken pipe (os error 32)
 
 ## Install
 
-Home-manager
+Using Home-Manager:
 
 ```nix
 _: {
@@ -49,7 +49,7 @@ _: {
             (pkgs.callPackage (pkgs.fetchFromGitHub {
                 owner = "Elbtalkessel";
                 repo = "nu_plugin_bg";
-                rev = "e1550316d5b64831be628c2e80cce93932ac75ea";
+                rev = "v0.5.0";
                 hash = "";
             }) { })
         ];
