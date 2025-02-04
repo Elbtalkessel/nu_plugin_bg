@@ -35,6 +35,30 @@ Starting process: 'cat' with args '["cargo.toml"]'
 cat: cargo.toml: Broken pipe (os error 32)
 ```
 
+# Using Nix
+
+## Install
+
+Home-manager
+
+```nix
+_: {
+    programs.nushell = {
+        enable = true;
+        plugins = [
+            (pkgs.callPackage (pkgs.fetchFromGitHub {
+                owner = "Elbtalkessel";
+                repo = "nu_plugin_bg";
+                rev = "e1550316d5b64831be628c2e80cce93932ac75ea";
+                hash = "";
+            }) { })
+        ];
+    };
+}
+```
+
+Use `nix-prefetch-url` or switch to the new home-manager configuration to get hash in error message.
+
 ## Build
 
 ```shell
